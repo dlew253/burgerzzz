@@ -1,11 +1,19 @@
-import React, {useState} from 'react';
-import BurgerIngredients from "./BurgerIngredients";
-import {checkPropTypes} from "prop-types";
+import React from 'react';
+import Ingredient from "./Ingredient";
 
 function BurgerStack(props) {
     return (
         <div>
-            <BurgerIngredients ingredients={props.ingredients} />
+            <ul>
+                {props.stack.map((ingredient, index)=>(
+                    <li key={`in-${index}`}>
+                        <Ingredient color={ingredient.color} ingredient={ingredient.name} />
+                    </li>
+                ))}
+            </ul>
+            <div>
+                <hr />
+            </div>
         </div>
     )
 }

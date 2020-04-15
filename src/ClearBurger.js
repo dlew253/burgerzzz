@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function ClearBurger(props) {
     return(
-        <button onClick={()=>props.ClearBurger()}>Clear the Burger</button>
-    );
+        <div>
+        <button onClick={(e)=>props.action(e)}>Clear the Burger</button>
+        </div>
+    )
 }
 
 export default ClearBurger;

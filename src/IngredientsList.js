@@ -1,12 +1,18 @@
 import React, {useState} from 'react';
-import {checkPropTypes} from "prop-types";
-import Ingredients from './Ingredients';
+import Ingredient from './Ingredient';
 
 function IngredientsList(props) {
     return(
-        <div class="list">
-            <Ingredients ingredients={props.ingredients} addIngredients={props.addIngredients}/>
-        </div>
+        <ul>
+            {props.ingredients.map((ingredient)=>{
+                return (
+                    <li name={ingredient.name} onClick={(e)=>props.action(e)}>
+                        <Ingredient color={ingredient.color} ingredient={ingredient.name} />
+                        
+                    </li>
+                )
+            })}
+        </ul>
     )
 }
 

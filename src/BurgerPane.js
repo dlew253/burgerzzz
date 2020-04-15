@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import BurgerStack from './BurgerStack';
 import ClearBurger from './ClearBurger';
-import {checkPropTypes} from "prop-types";
+
 
 function BurgerPane(props) {
     return (
         <div class="burgerpane">
-            <BurgerStack ingredients={props.ingredients} />
-            <ClearBurger clearburger={props.clearburger} />
+            <BurgerStack ingredients={props.stack} />
+            <ClearBurger action={props.action} />
         </div>
     )
 }
